@@ -8,7 +8,7 @@ The model was fine tuned for 25 epochs and achieves an testing AUROC value of 0.
 
 The segmentation output of the model on a sample image are shown below.
 
-![Sample segmentation output](./SegmentationOutput.png)
+![Sample segmentation output](./CFExp/SegmentationOutput.png)
 
 To run the code on your dataset use the following command.
 
