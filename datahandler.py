@@ -52,10 +52,10 @@ class SegDataset(Dataset):
                 sorted(glob.glob(os.path.join(self.root_dir, maskFolder, '*'))))
             if seed:
                 np.random.seed(seed)
-            indices = np.arange(len(self.image_list))
-            np.random.shuffle(indices)
-            self.image_list = self.image_list[indices]
-            self.mask_list = self.mask_list[indices]
+                indices = np.arange(len(self.image_list))
+                np.random.shuffle(indices)
+                self.image_list = self.image_list[indices]
+                self.mask_list = self.mask_list[indices]
             if subset == 'Train':
                 self.image_names = self.image_list[:int(
                     np.ceil(len(self.image_list)*(1-self.fraction)))]
