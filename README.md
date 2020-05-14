@@ -1,4 +1,4 @@
-DeepLabv3FineTuning
+Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3
 
 This repository contains code for Fine Tuning [DeepLabV3 ResNet101](https://arxiv.org/abs/1706.05587) in PyTorch. The model is from the [torchvision module](https://pytorch.org/docs/stable/torchvision/models.html#semantic-segmentation). The tutorial can be found here: [https://expoundai.wordpress.com/2019/08/30/transfer-learning-for-segmentation-using-deeplabv3-in-pytorch/](https://expoundai.wordpress.com/2019/08/30/transfer-learning-for-segmentation-using-deeplabv3-in-pytorch/)
 
@@ -56,3 +56,13 @@ Create from a single folder. The structure should be as follows.
 ```
 
 The repository also contains a JupyterLab file with the loss and metric plots as well as the sample prediction code.
+
+If you found this repository to be useful and use it in your work, please consider citing it:
+
+Bibtex Entry:
+
+@misc{minhas_2019, title={Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3}, url={https://github.com/msminhas93/DeepLabv3FineTuning}, journal={GitHub.com/msminhas93}, author={Minhas, Manpreet Singh}, year={2019}, month={Sep}}
+
+IEEE Format Citation:
+
+M. S. Minhas, “Transfer Learning for Semantic Segmentation using PyTorch DeepLab v3,” GitHub.com/msminhas93, 12-Sep-2019. [Online]. Available: https://github.com/msminhas93/DeepLabv3FineTuning.
