@@ -1,0 +1,9 @@
+name: deeplabfinetuning
+dependencies:
+  - numpy
+  - scikit-learn
+  - scipy
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - tqdm
+  - click
