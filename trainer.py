@@ -1,13 +1,15 @@
-import csv
 import copy
-import time
-from tqdm import tqdm
-import torch
-import numpy as np
+import csv
 import os
+import time
+
+import numpy as np
+import torch
+from tqdm import tqdm
 
 
-def train_model(model, criterion, dataloaders, optimizer, metrics, bpath, num_epochs=3):
+def train_model(model, criterion, dataloaders, optimizer, metrics, bpath,
+                num_epochs):
     since = time.time()
     best_model_wts = copy.deepcopy(model.state_dict())
     best_loss = 1e10
@@ -22,7 +24,7 @@ def train_model(model, criterion, dataloaders, optimizer, metrics, bpath, num_ep
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-    for epoch in range(1, num_epochs+1):
+    for epoch in range(1, num_epochs + 1):
         print('Epoch {}/{}'.format(epoch, num_epochs))
         print('-' * 10)
         # Each epoch has a training and validation phase
@@ -33,7 +35,7 @@ def train_model(model, criterion, dataloaders, optimizer, metrics, bpath, num_ep
             if phase == 'Train':
                 model.train()  # Set model to training mode
             else:
-                model.eval()   # Set model to evaluate mode
+                model.eval()  # Set model to evaluate mode
 
             # Iterate over data.
             for sample in tqdm(iter(dataloaders[phase])):
@@ -64,8 +66,7 @@ def train_model(model, criterion, dataloaders, optimizer, metrics, bpath, num_ep
             batchsummary['epoch'] = epoch
             epoch_loss = loss
             batchsummary[f'{phase}_loss'] = epoch_loss.item()
-            print('{} Loss: {:.4f}'.format(
-                phase, loss))
+            print('{} Loss: {:.4f}'.format(phase, loss))
         for field in fieldnames[3:]:
             batchsummary[field] = np.mean(batchsummary[field])
         print(batchsummary)
