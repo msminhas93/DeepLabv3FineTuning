@@ -21,13 +21,13 @@ def get_dataloader_sep_folder(data_dir: str,
         ------Mask
         ---------Mask1
         ---------MaskN
-        --Train
+        --Test
         ------Image
         ---------Image1
-        ---------ImageN
+        ---------ImageM
         ------Mask
         ---------Mask1
-        ---------MaskN
+        ---------MaskM
 
     Args:
         data_dir (str): The data directory or root.
@@ -42,7 +42,7 @@ def get_dataloader_sep_folder(data_dir: str,
     data_transforms = transforms.Compose([transforms.ToTensor()])
 
     image_datasets = {
-        x: SegmentationDataset(root_dir=Path(data_dir) / x,
+        x: SegmentationDataset(root=Path(data_dir) / x,
                                transforms=data_transforms,
                                image_folder=image_folder,
                                mask_folder=mask_folder)
