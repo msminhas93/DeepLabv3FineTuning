@@ -62,13 +62,13 @@ The datahandler module has two functions for creating datasets fron single and d
     ------Mask
     ---------Mask1
     ---------MaskN
-    --Train
+    --Test
     ------Image
     ---------Image1
-    ---------ImageN
+    ---------ImageM
     ------Mask
     ---------Mask1
-    ---------MaskN
+    ---------MaskM
     ```
 
 2. ```
